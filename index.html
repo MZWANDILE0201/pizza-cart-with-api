@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="pizza.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body x-data="pizzaCart">
+  <h1 x-text="title"></h1>
+
+  <template x-for="pizza in pizzas">
+    <div>
+      <div class="pizza">
+        <h5 x-text="pizza.flavour"></h5>
+        <!-- <span x-text="pizza.id"></span> -->
+        <span x-text="pizza.price"></span>
+        <span x-text="pizza.size"></span>
+      </div>
+    </div>
+  </template>
+
+</body>
+
+</html>
