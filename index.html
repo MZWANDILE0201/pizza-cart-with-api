@@ -74,57 +74,60 @@
         <!-- Funtionality to our button ends here -->
         <!-- Looping through the pizza starts here -->
 
-        <div class="pizzas" x-show="username  && cartId">
-            <h2>Pizzas</h2>
-           <template x-for="pizza in pizzas">
-            <template x-if="pizza['size']=='small'">
-                <div class="pizza">
-                    <h5 x-text="pizza.flavour"></h5>
-                    <span x-text="pizza.size"></span>@
-                    <strong>
-                        R<span x-text="pizza.price"></span>
-                    </strong>
-                    <div>
-                        <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
-                    </div>
+                <div class="pizzas" x-show="username  && cartId">
+                    <h2>Pizzas</h2>
+                    <template x-for="pizza in pizzas">
+                        <template x-if="pizza['size']=='small'">
+                            <div class="pizza">
+                                <div class="right"> <img src="img/images.png" width="80"></div>
+                                <h5 x-text="pizza.flavour"></h5>
+                                <span x-text="pizza.size"></span>@
+                                <strong>
+                                    R<span x-text="pizza.price"></span>
+                                </strong>
+                                <div>
+                                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+
+
+                    <template x-for="pizza in pizzas">
+                        <template x-if="pizza['size']=='medium'">
+                            <div class="pizza">
+                                <div class="right"> <img src="img/medium.png.png" width="80"></div>
+                                <h5 x-text="pizza.flavour"></h5>
+                                <span x-text="pizza.size"></span>@
+                                <strong>
+                                    R<span x-text="pizza.price"></span>
+                                </strong>
+                                <div class="pizzas">
+                                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template x-for="pizza in pizzas">
+                        <template x-if="pizza['size']=='large'">
+                            <div class="pizza">
+                                <div class="right"> <img src="img/large.png.png" width="80"></div>
+                                <h5 x-text="pizza.flavour"></h5>
+                                <span x-text="pizza.size"></span>@
+                                <strong>
+                                    R<span x-text="pizza.price"></span>
+                                </strong>
+                                <div>
+                                    <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
                 </div>
-            </template>
-           </template>
-
-
-
-           <template x-for="pizza in pizzas">
-            <template x-if="pizza['size']=='medium'">
-                <div class="pizza">
-                    <h5 x-text="pizza.flavour"></h5>
-                    <span x-text="pizza.size"></span>@
-                    <strong>
-                        R<span x-text="pizza.price"></span>
-                    </strong>
-                    <div>
-                        <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
-                    </div>
-                </div>
-            </template>
-           </template>
-
-           <template x-for="pizza in pizzas">
-            <template x-if="pizza['size']=='large'">
-                <div class="pizza">
-                    <h5 x-text="pizza.flavour"></h5>
-                    <span x-text="pizza.size"></span>@
-                    <strong>
-                        R<span x-text="pizza.price"></span>
-                    </strong>
-                    <div>
-                        <button class="btn" x-on:click="addPizzaToCart(pizza.id)">Add to cart</button>
-                    </div>
-                </div>
-            </template>
-           </template>
-        </div>
-        <!-- Looping through the pizza ends here -->
-    </div>
+                <!-- Looping through the pizza ends here -->
+            </div>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/add
 content-type: application/json
 
 {
-	"cart_code" : "9jO6VQUpc6",
+	"cart_code" : "6o9Pu4u8zB",
 	"pizza_id" : 3
 }
 
@@ -31,7 +31,7 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/add
 content-type: application/json
 
 {
-	"cart_code" : "9jO6VQUpc6",
+	"cart_code" : "6o9Pu4u8zB",
 	"pizza_id" : 11
 }
 
@@ -41,7 +41,7 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/remove
 content-type: application/json
 
 {
-	"cart_code" : "9jO6VQUpc6",
+	"cart_code" : "6o9Pu4u8zB",
 	"pizza_id" : 3
 }
 
@@ -51,7 +51,7 @@ GET https://pizza-api.projectcodex.net/api/pizza-cart/username/MZWANDILE0201
 
 ### GET all the active carts for a user
 
-GET https://pizza-api.projectcodex.net/api/pizza-cart/username/Lindani/active
+GET https://pizza-api.projectcodex.net/api/pizza-cart/username/MZWANDILE0201/active
 
 
 ### Pay for a pizza from the cart
@@ -60,15 +60,15 @@ POST https://pizza-api.projectcodex.net/api/pizza-cart/pay
 content-type: application/json
 
 {
-	"cart_code" : "9jO6VQUpc6",
+	"cart_code" : "6o9Pu4u8zB",
 	"amount" : 200
 }
 
 
 ### Get featured pizzas
 
-
-GET http://localhost:4009/api/pizzas/featured?username=MZWANDILE0201
+### Featured pizzas
+POST https://api/pizzas/featured?username=your_Mzwandile0201
 
 
 ### SET featured pizzas
@@ -77,6 +77,6 @@ POST http://localhost:4009/api/pizzas/featured
 content-type: application/json
 
 {
-	"username" : "MZWANDILE0201",
+	"username" : "avermeulen",
 	"pizza_id" : 13
 }

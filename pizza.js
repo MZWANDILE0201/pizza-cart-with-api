@@ -89,6 +89,9 @@ document.addEventListener("alpine:init", () => {
             this.cartTotal = cartData.total.toFixed(2);
           });
         },
+        pizzaImage(pizza){
+          return `/img/${pizza.size}.png`
+        },
   
         init() {
   
@@ -112,6 +115,46 @@ document.addEventListener("alpine:init", () => {
               this.showCartData();
             });
           }
+        },
+
+        postfeaturedPizzas(pizza) {
+
+          let data = JSON.stringify({
+            "username": this.username,
+            "pizza_id": pizza
+          });
+  
+          let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'https://pizza-api.projectcodex.net/api/pizzas/featured',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: data
+          };
+  
+          axios.request(config)
+            .then((result) => {
+              console.log(JSON.stringify(result.data));
+            }).then(() => {
+              return this.featuredPizzas()
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+  
+        },
+  
+        featuredPizzas() {
+          return axios
+            .get(`https://pizza-api.projectcodex.net/api/pizzas/featured?username=${this.username}`)
+            .then((result) => {
+  
+              this.showFeaturedpizzas = result.data;
+  
+              console.log(result.data)
+            })
         },
   
         //   Adds Pizza to card
